@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#2A0F1E" />
+  <title>A little something for Erin</title>
+  <meta property="og:title" content="A little something for Erin" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 6' shape-rendering='crispEdges'><path fill='%23FF5FA2' d='M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" />
+</head>
+<body>
+  <main id="app">
+    <!-- 1. BOOT -->
+    <section id="boot" class="screen active" aria-label="Loading">
+      <div class="boot-inner">
+        <div id="bootArt" class="boot-art" aria-hidden="true"></div>
+        <p class="boot-line" style="--i:0">PLAYER: ERIN</p>
+        <p class="boot-line" style="--i:1" id="bootLevel">LEVEL 19 ...</p>
+        <div class="bar boot-line" style="--i:2" role="progressbar" aria-label="Loading level 20" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bootBar">
+          <div class="bar-fill" id="bootFill"></div>
+        </div>
+        <p class="boot-line boot-pct" style="--i:2" id="bootPct">0%</p>
+        <div id="bootActions" class="boot-actions" hidden>
+          <button id="startBtn" class="btn btn-primary blink" aria-label="Tap to start the game">TAP TO START</button>
+          <button id="replayBtn" class="btn btn-primary" hidden aria-label="Replay the rose game">REPLAY GAME</button>
+          <button id="skipBtn" class="btn" hidden aria-label="Skip straight to the letter">SKIP TO LETTER</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. GAME + 3. LEVEL UP -->
+    <section id="game" class="screen" aria-label="Catch 20 roses">
+      <div class="hud" aria-hidden="true">
+        <span id="hudCan"></span>
+        <div class="hp-bar"><div class="hp-fill"></div></div>
+        <span class="hp-label">HP</span>
+      </div>
+      <p id="instruction">CATCH 20 ROSES</p>
+      <div id="counter" class="counter" aria-hidden="true"><span class="num">0</span></div>
+      <p id="gameStatus" class="sr-only" aria-live="polite"></p>
+      <div id="field"></div>
+      <div id="levelup" hidden>
+        <div class="flash"></div>
+        <p class="lu-text" role="alert">LEVEL 20<br />UNLOCKED!</p>
+      </div>
+    </section>
+
+    <!-- 4. STORY -->
+    <section id="story" class="screen" aria-label="A letter for Erin">
+      <div class="petals" aria-hidden="true"></div>
+      <div class="rain" aria-hidden="true"></div>
+      <div class="story-grid">
+        <div class="top-bar">
+          <button id="phoneBtn" class="icon-btn small" aria-label="A suspicious iPhone 13"></button>
+        </div>
+        <div class="photo-row" id="photosTop"></div>
+        <div class="card-wrap">
+          <article id="letter" class="letter" tabindex="0" role="button" aria-label="Letter page. Tap to continue.">
+            <h2 id="letterTitle"></h2>
+            <p id="letterText" aria-hidden="true"></p>
+            <p id="letterSr" class="sr-only" aria-live="polite"></p>
+            <div class="letter-foot">
+              <span id="pageDots" class="dots" aria-hidden="true"></span>
+              <span id="continue" class="continue">TAP TO CONTINUE ▶</span>
+            </div>
+          </article>
+          <div id="finale" class="finale" hidden>
+            <h2 class="finale-title"><span id="finaleText"></span> <span id="finaleHeart" class="finale-heart"></span></h2>
+            <p id="signature" class="signature"></p>
+            <button id="againBtn" class="btn" aria-label="Read the letter again">READ AGAIN</button>
+          </div>
+        </div>
+        <div class="photo-row" id="photosBottom"></div>
+        <div class="bottom-bar">
+          <button id="trophyBtn" class="icon-btn" aria-label="Open achievements"></button>
+          <p id="hint" class="hint"></p>
+          <button id="ticketBtn" class="icon-btn" aria-label="Open vouchers"></button>
+        </div>
+      </div>
+      <button id="goldRose" class="secret-rose" aria-label="A hidden golden rose"></button>
+      <button id="canBtn" class="drift-can" aria-label="A passing energy can" hidden></button>
+    </section>
+
+    <button id="muteBtn" class="icon-btn" hidden></button>
+    <div id="modal" class="modal" hidden><div class="modal-card" role="dialog" aria-modal="true" tabindex="-1"></div></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div class="rotate">PLEASE TURN YOUR PHONE<br />UPRIGHT ♥</div>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
