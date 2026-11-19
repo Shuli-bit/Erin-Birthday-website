@@ -38,12 +38,11 @@ Everything is in `config.js`: letter pages, finale title and signature, the hint
 
 ## Deploy
 
-**Vercel:** push to GitHub → vercel.com → New Project → import the repo. Framework: Vite (auto-detected). Build command `npm run build`, output `dist`.
+**GitHub Pages (current setup):** every push to `main` builds and publishes the site via `.github/workflows/deploy.yml`.
+Live at https://shuli-bit.github.io/Erin-Birthday-website/ — check progress under the repo's **Actions** tab.
+One-time setup: repo **Settings → Pages → Source: GitHub Actions** (free plan needs the repo to be public).
 
-**Netlify:** push to GitHub → app.netlify.com → Add new site → import the repo. Build command `npm run build`, publish directory `dist`.
-Or with no Git: run `npm run build` and drag the `dist` folder onto app.netlify.com/drop.
-
-Then turn the URL into a QR code. Use one that doesn't track scans, or the URL itself.
+`qr/heart-qr.png` / `.svg` is the heart-shaped QR code pointing at the live URL.
 
 ## Before you send it
 
