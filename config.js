@@ -84,6 +84,6 @@ export default {
   voucherReset: 1,
 
   // Fake iOS update (tiny phone icon, top-left of the letter screen).
-  iosVersion: 'iOS 13.0.0.0.0.1 (for iPhone 13 mini only)',
+  iosVersion: 'iOS 13.0.0.0.1 (for iPhone 13 mini only)',
   iosMessage: 'Apple is definitely doing this on purpose.',
 };
