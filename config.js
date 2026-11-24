@@ -79,6 +79,9 @@ export default {
     { title: 'ONE ANTERIOR PELVIC TILT CONSULTATION', note: 'technically physio territory, exceptions apply' },
   ],
   redeemedMessage: 'REDEEMED! Show this screen to Shuaib.',
+  // UN-REDEEM EVERYTHING: change this number (1 -> 2 -> 3 ...), then commit + push.
+  // Every phone sees all vouchers as un-redeemed again. Nothing else is reset.
+  voucherReset: 1,
 
   // Fake iOS update (tiny phone icon, top-left of the letter screen).
   iosVersion: 'iOS 13.0.0.0.0.1 (for iPhone 13 mini only)',

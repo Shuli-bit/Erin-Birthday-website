@@ -77,7 +77,8 @@ export function initExtras(root) {
 
   // 4. vouchers
   function vouchers() {
-    const redeemed = new Set(store.get().redeemed || []);
+    const SLOT = 'redeemed' + (C.voucherReset || ''); // new number = new save slot = all vouchers fresh
+    const redeemed = new Set(store.get()[SLOT] || []);
     const html = C.coupons.map((c, i) => {
       const done = redeemed.has(i);
       return `<div class="ticket${done ? ' done' : ''}" data-i="${i}">
@@ -102,7 +103,7 @@ export function initExtras(root) {
         audio.stamp();
         vibrate(40);
         redeemed.add(i);
-        store.set({ redeemed: [...redeemed] });
+        store.set({ [SLOT]: [...redeemed] });
       };
     });
   }
